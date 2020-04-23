@@ -1,9 +1,9 @@
 <div class="card text-center">
   <div class="card-header">
         {{#if this.isKanji}}
-        <a class="btn" {{on "click" this.toggleLanguage}}>See Meaning</a>
+        <button class="btn btn-secondary" type="button" {{on "click" this.toggleLanguage}}>See Meaning</button>
         {{else}}
-        <a class="btn" {{on "click" this.toggleLanguage}}>See Kanji</a>
+        <button class="btn btn-secondary" type="button" {{on "click" this.toggleLanguage}}>See Kanji</button>
         {{/if}}
       {{!-- <li class="nav-item">
         <a class="nav-link" href="#">English</a>
