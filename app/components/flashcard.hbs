@@ -1,0 +1,24 @@
+<div class="card text-center">
+  <div class="card-header">
+        {{#if this.isKanji}}
+        <a class="btn" {{on "click" this.toggleLanguage}}>See Meaning</a>
+        {{else}}
+        <a class="btn" {{on "click" this.toggleLanguage}}>See Kanji</a>
+        {{/if}}
+      {{!-- <li class="nav-item">
+        <a class="nav-link" href="#">English</a>
+      </li> --}}
+  </div>
+  <div class="card-body">
+    {{#if this.isKanji}}
+      <h1 class="card-title">{{@kanji.kanji}}</h1>
+      <div>{{@kanji.kunyomi_ja}}, {{@kanji.onyomi_ja}}</div>
+    {{else}}
+      <h3 class="card-title">{{@kanji.kmeaning}}</h3>
+    {{/if}}
+    {{!-- <p class="card-text"></p> --}}
+    <a href="#" class="btn btn-primary"{{on "click" this.toggleLearning}}>O</a>
+    <a href="#" class="btn btn-danger"{{on "click" this.toggleLearning}}>X</a>
+  </div>
+</div>
+
