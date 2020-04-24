@@ -1,25 +1,29 @@
-<div class="card text-center">
-  <div class="card-header">
-        {{#if this.isKanji}}
-        <button class="btn btn-secondary" type="button" {{on "click" this.toggleLanguage}}>See Meaning</button>
-        {{else}}
-        <button class="btn btn-secondary" type="button" {{on "click" this.toggleLanguage}}>See Kanji</button>
-        {{/if}}
-      {{!-- <li class="nav-item">
-        <a class="nav-link" href="#">English</a>
-      </li> --}}
-  </div>
+<div class="card">
   <div class="card-body">
     {{#if this.isKanji}}
-      <h1 class="card-title">{{@kanji.kanji}}</h1>
-      <div>{{@kanji.kunyomi_ja}}, {{@kanji.onyomi_ja}}</div>
-      <div>Grade {{@kanji.kgrade}}</div>
+      <h1 class="card-title">
+        <LinkTo @route="kanji" @model={{@kanji}}>
+          {{@kanji.kanji}}
+        </LinkTo>
+      </h1>
+      <div><strong>{{@kanji.onyomi_ja}}</strong></div>
+      <div>{{@kanji.kunyomi_ja}}</div>
+      <div>
+      <LinkTo @route="grade" @model={{@kanji}}>
+        Grade {{@kanji.kgrade}}
+      </LinkTo>
+      </div>
     {{else}}
-      <h3 class="card-title">{{@kanji.kmeaning}}</h3>
+      <h2 class="card-title">{{@kanji.kmeaning}}</h2>
     {{/if}}
-    {{!-- <p class="card-text"></p> --}}
-    <a href="#" class="btn btn-primary"{{on "click" this.toggleLearning}}>O</a>
-    <a href="#" class="btn btn-danger"{{on "click" this.toggleLearning}}>X</a>
-  </div>
-</div>
+    </div>
 
+    {{!-- <p class="card-text"></p> --}}
+    <div class="card-footer">
+      {{#if this.isKanji}}
+        <button type="button" class="btn btn-secondary btn-block" type="button" {{on "click" this.toggleLanguage}}>See Meaning</button>
+      {{else}}
+        <button type="button" class="btn btn-secondary btn-block" type="button" {{on "click" this.toggleLanguage}}>See Kanji</button>
+      {{/if}}
+    </div>
+</div>

@@ -11,4 +11,6 @@ Router.map(function() {
   this.route('cardlist');
   this.route('login');
   this.route('signup')
+  this.route('kanji', {path: '/kanji/:id' })
+  this.route('grade', {path: '/grade/:kgrade'})
 });

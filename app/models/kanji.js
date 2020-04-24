@@ -8,4 +8,6 @@ export default class KanjiModel extends Model {
   @attr kunyomi;
   @attr onyomi_ja;
   @attr onyomi;
+  @attr examples;
+  @attr id;
 }
